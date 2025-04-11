@@ -1,6 +1,6 @@
-name: TesterPlugin
+name: libScriptAPIPlugin
 version: 1.0.0
-main: MyPlugin\Main
+main: ClickedTran\Tester\Main
 api: 5.0.0
 
 commands:
