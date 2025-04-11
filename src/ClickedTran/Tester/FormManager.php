@@ -6,8 +6,8 @@ use jojoe77777\FormAPI\SimpleForm;
 
 /** @var Player $player */
 
-function sendForm(Player $player) : void{
-  $form = new SimpleForm(function(Player $player, ?int $data){
+function sendMenu(Player $player) : void{
+  $form = new SimpleForm(function(Player $player, ?int $data) : void{
       if ($data === null) return;
       sayHello($player, $data);
   });
@@ -20,8 +20,15 @@ function sendForm(Player $player) : void{
 }
 
 function sayHello(Player $player, int $data){
-    $player.sendMessage("Bạn đã ấn vào nút số " . ($data + 1));
-    Server::getInstance().getLogger().info("Người chơi " . $player.getName() . " vừa ấn vào nút số " . ($data + 1));
+    $form = new SimpleForm(function(Player $player, ?int $data) : void{
+      if ($data === null) sendMenu($player);
+  });
+  $d = $data + 1;
+
+  $form.setTitle("Form test");
+  $form.setContent("Bạn đã ấn vào nút ". $d);
+
+  $player.sendForm($form);
 }
 
-sendForm($player);
+sendMenu($player);
