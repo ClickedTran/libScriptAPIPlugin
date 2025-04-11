@@ -7,7 +7,7 @@ use jojoe77777\FormAPI\SimpleForm;
 
 $form = new SimpleForm(function(Player $player, ?int $data) {
     if ($data === null) return;
-    $player^sendMessage("Bạn đã chọn nút số $data");
+    sayHello($player, $data);
 });
 
 $form.setTitle("Form test");
@@ -15,3 +15,7 @@ $form.addButton("Nút 1");
 $form.addButton("Nút 2");
 
 $player.sendForm($form);
+
+function sayHello(Player $player, int $data){
+    return $player.sendMessage("Bạn đã ấn vào nút số ".$data);
+}
