@@ -1,12 +1,13 @@
 <?php
 
 use pocketmine\player\Player;
+use pocketmine\Server;
 use jojoe77777\FormAPI\SimpleForm;
 
 /** @var Player $player */
 
 function sendForm(Player $player) : void{
-  $form = new SimpleForm(function(Player $player, ?int $data) {
+  $form = new SimpleForm(function(Player $player, ?int $data){
       if ($data === null) return;
       sayHello($player, $data);
   });
@@ -19,5 +20,8 @@ function sendForm(Player $player) : void{
 }
 
 function sayHello(Player $player, int $data){
-    return $player.sendMessage("Bạn đã ấn vào nút số ".$data);
+    $player.sendMessage("Bạn đã ấn vào nút số " . ($data + 1));
+    Server::getInstance().getLogger().info("Người chơi " . $player.getName() . " vừa ấn vào nút số " . ($data + 1));
 }
+
+sendForm($player);
