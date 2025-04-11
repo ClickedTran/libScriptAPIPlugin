@@ -1,0 +1,16 @@
+name: TesterPlugin
+version: 1.0.0
+main: MyPlugin\Main
+api: 5.0.0
+
+commands:
+ testform:
+  permission: "testform.command"
+ testgui:
+  permission: "testgui.command"
+
+permissions:
+ testform.command:
+  default: true
+ testgui.command:
+  default: true
