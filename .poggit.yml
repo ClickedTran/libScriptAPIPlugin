@@ -9,5 +9,5 @@ projects:
      - src: jojoe77777/FormAPI/libFormAPI
        version: ^2.1.1
      - src: muqsit/InvMenu/InvMenu
-       version: ^3.0.0
+       version: ^4.6.6
 ...
