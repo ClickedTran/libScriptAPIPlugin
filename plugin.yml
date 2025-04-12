@@ -1,7 +1,7 @@
 name: libScriptAPIPlugin
 version: 1.0.0
 main: ClickedTran\Tester\Main
-api: 5.0.0
+api: 5.27.0
 
 commands:
  testform:
