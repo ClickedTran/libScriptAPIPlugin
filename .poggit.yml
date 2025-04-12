@@ -5,4 +5,9 @@ branches:
 projects:
   libScriptAPIPlugin:
     path: ""
+    libs:
+     - src: jojoe77777/FormAPI/FormAPI
+       version: ^1.0.0
+     - src: muqsit/InvMenu/InvMenu
+       version: ^3.0.0
 ...
